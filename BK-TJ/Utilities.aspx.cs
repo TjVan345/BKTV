@@ -13,7 +13,7 @@ namespace BK_TJ
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Session["Search"] as string))
+            if (!string.IsNullOrEmpty(Request.QueryString["Search"] as string))
             {
                 if (!Session["Search"].ToString().Contains("'") && !Session["Search"].ToString().Contains("--"))
                 {

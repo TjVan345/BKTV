@@ -4,17 +4,25 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
     <div class="row">
         <h2>Hardware</h2>
+        <br /><br />
         <div class="col-sm-12" style="width:100%;">
         <asp:DataList ID="dlUtilities" runat="server" BorderStyle="Solid" BorderWidth="1px" HorizontalAlign="Center">
             <ItemTemplate>
-                <div class="text-left" style=" margin-top:10px; margin-bottom:10px; margin-right:10px; margin-left:10px; width:700px">
+                <div class="text-left" style=" margin-top:30px; margin-bottom:30px; margin-right:10px; margin-left:10px; width:700px">
                     <asp:Table ID="Table2" runat="server">
                         <asp:TableRow>
                             <asp:TableCell Height="200px">
-                                <img src="Image/#.jpg" alt="Unable to Load" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# "Images/" + Eval("Image") %>' Height="180px" Width="260px" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("Name") %>' Font-Size="Large"></asp:Label>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <div style="padding-left:50px;">
                                     <a href='<%# "ProductView?ID=" + Eval("ID") %>' style="padding-left:25px;">
-                                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("Name") %>'></asp:Label>
-                                </a>
+                                        <asp:Label ID="btnView" runat="server" Text="View" CssClass="form-control text-center" Font-Size="Large" Width="100" Height="50"/>
+                                    </a>
+                                </div>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>

@@ -14,6 +14,7 @@ namespace BK_TJ
         protected void Page_Load(object sender, EventArgs e)
         {
             lblOrder.Text = "Order has been recorded.";
+            Session["thisCart"] = null;
         }
 
         protected void Return_Click(object sender, EventArgs e)
